@@ -13,13 +13,13 @@ const AppProvider = ({ children }) => {
     const [number, setNumber] = useState(0)
     const [total, setTotal] = useState(0)
     const [items,setItems]= useState([]);
-    const [isSidebarOpen, setIsSideBarOpen] = useState(false)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     const openSidebar = () => {
-        setIsSideBarOpen(true)
+        setIsSidebarOpen(true)
     }
     const closeSidebar = () => {
-        setIsSideBarOpen(false)
+        setIsSidebarOpen(false)
     }
     
     const increase = () => {
@@ -43,7 +43,8 @@ return(
        <AppContext.Provider value={{number, 
        increase, 
        items,
-       setIsSideBarOpen,
+       isSidebarOpen,
+       setIsSidebarOpen,
        openSidebar,
        closeSidebar,}}>
 {children}

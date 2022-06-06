@@ -13,7 +13,7 @@ import { useGlobalContext } from "./context";
 
 const Dashboard =({user}) =>{
 
-const {number,closeSidebar} = useGlobalContext()
+const {number,openSidebar} = useGlobalContext()
 
 
  
@@ -26,7 +26,7 @@ const {number,closeSidebar} = useGlobalContext()
                    <div className="name first-nav">
 
                        <div>
-                        <button className="toggle" onClick={closeSidebar} >
+                        <button className="sidebar-toggle" onClick={openSidebar} >
                       <FaBars />
                      </button>
                        </div>

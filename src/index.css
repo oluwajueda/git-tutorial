@@ -117,6 +117,17 @@ p{
   font-size: 18px;
 
 }
+
+/* .close-btn {
+  color: #fff;
+  font-size: 25px;
+  background-color: transparent;
+  background: transparent;
+  margin-top: 2px;
+  float: right;
+  display: none;
+} */
+
 .navbar{
 background-color: #fff;
 box-shadow: 0 1px #cdcdcd;
@@ -153,14 +164,16 @@ ul .link{
   align-items: center;
 }
 
-.toggle{
+/* .sidebar-toggle{
   margin-left: 5px;
   border-color: transparent;
   background-color: transparent;
   color:#764AF1;;
   align-items: center;
   justify-content: center;
-}
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+} */
 .welcome{
   color: #764AF1;
   font-size: 17px;
@@ -174,6 +187,7 @@ ul .link{
   height: 100%;
   background-color: #764AF1;
 }
+
 
 .product-display{
   margin-left: auto;
@@ -237,7 +251,8 @@ ul .link{
 
 .profile-image{
   border-radius: 100%;
-  margin-top: 15px;
+  margin-top: 60px;
+  width: 130px;
 }
 aside h4{
   color: white;
@@ -308,9 +323,40 @@ width: 350px;
       width: 100%;
   
     }
-        .sidebar {
+        /* .sidebar {
           display: none;
-        }
+        } */
+                .close-btn {
+                  color: #fff;
+                  font-size: 25px;
+                  background-color: transparent;
+                  background: transparent;
+                  margin-top: 2px;
+                  float: right;
+                }
+ .sidebar-toggle{
+  margin-left: 5px;
+  border-color: transparent;
+  background-color: transparent;
+  color:#764AF1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 57%;
+  height: 100%;
+  background-color: #764AF1;
+  transform: translate(-100%)
+}
+
+.show-sidebar {
+  transform: translate(0);
+}
 }
 
 @media(max-width: 600px){
@@ -320,8 +366,22 @@ width: 350px;
     text-align: center;
   }
 
-  .sidebar{
-    display: none;
-  }
-
+    .close-btn {
+      color: #fff;
+      font-size: 25px;
+      background-color: transparent;
+      background: transparent;
+      margin-top: 2px;
+      float: right;
+    }
+.sidebar-toggle {
+  margin-left: 5px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #764AF1;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+}
 }

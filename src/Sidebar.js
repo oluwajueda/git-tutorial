@@ -1,6 +1,7 @@
 import React from 'react'
 import  avatar from './photo/avatar-profile.jpg'
 import  {CgProfile} from 'react-icons/cg'
+import {FaTimes} from 'react-icons/fa'
 import { useGlobalContext } from './context'
 
 
@@ -8,9 +9,13 @@ import { useGlobalContext } from './context'
 
 const Sidebar = ({user}) => {
 
-const {number} = useGlobalContext()
+const {number, isSidebarOpen, closeSidebar} = useGlobalContext()
   
-  return <aside className='sidebar'>
+  return <aside className={`${isSidebarOpen? 'sidebar show-sidebar' : 'sidebar'}`}>
+
+    <buton className='close-btn' onClick={closeSidebar}>
+         <FaTimes/>
+       </buton>
       <div className='profile'>
       <img src={avatar} className='profile-image' alt='avatar'/>
     
