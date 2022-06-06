@@ -118,7 +118,7 @@ p{
 
 }
 
-/* .close-btn {
+.close-btn {
   color: #fff;
   font-size: 25px;
   background-color: transparent;
@@ -126,7 +126,7 @@ p{
   margin-top: 2px;
   float: right;
   display: none;
-} */
+}
 
 .navbar{
 background-color: #fff;
@@ -164,7 +164,7 @@ ul .link{
   align-items: center;
 }
 
-/* .sidebar-toggle{
+.sidebar-toggle{
   margin-left: 5px;
   border-color: transparent;
   background-color: transparent;
@@ -173,7 +173,8 @@ ul .link{
   justify-content: center;
   cursor: pointer;
   animation: bounce 2s ease-in-out infinite;
-} */
+   display: none;
+}
 .welcome{
   color: #764AF1;
   font-size: 17px;
@@ -373,6 +374,7 @@ width: 350px;
       background: transparent;
       margin-top: 2px;
       float: right;
+      display: block;
     }
 .sidebar-toggle {
   margin-left: 5px;
@@ -383,5 +385,6 @@ width: 350px;
   justify-content: center;
   cursor: pointer;
   animation: bounce 2s ease-in-out infinite;
+  display: block;
 }
 }
