@@ -9,11 +9,14 @@ const url = 'https://fakestoreapi.com/products';
 
 
 const AppProvider = ({ children }) => {
-   
+
     const [number, setNumber] = useState(0)
     const [total, setTotal] = useState(0)
     const [items,setItems]= useState([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+    const [input, setInput] = useState(0)
+    const [amount, setAmount] = useState(false)
+
 
     const openSidebar = () => {
         setIsSidebarOpen(true)
@@ -22,10 +25,7 @@ const AppProvider = ({ children }) => {
         setIsSidebarOpen(false)
     }
     
-    const increase = () => {
-        setNumber(number + 1)
-    }
-
+    
 const FetchItems = async () => {
 
         const response = await fetch(url);
@@ -41,12 +41,16 @@ const FetchItems = async () => {
 
 return(
        <AppContext.Provider value={{number, 
-       increase, 
+    
        items,
        isSidebarOpen,
+    
        setIsSidebarOpen,
        openSidebar,
-       closeSidebar,}}>
+       closeSidebar,
+       amount,
+       setAmount,
+       }}>
 {children}
        </AppContext.Provider>
 
