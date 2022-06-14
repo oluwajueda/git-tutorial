@@ -16,7 +16,8 @@ const AppProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [input, setInput] = useState(0)
     const [amount, setAmount] = useState(false)
-
+    const [cart, setCart] = useState([])
+    const [qty, setQty] = useState(1);
 
     const openSidebar = () => {
         setIsSidebarOpen(true)
@@ -37,7 +38,26 @@ const FetchItems = async () => {
 
     useEffect(()=>{
     FetchItems();
-},[])
+},[]);
+
+useEffect (()=>{
+    let {total, amount} = cart.reduce(
+        (cartTotal, cartItem) => {
+            const {price, qty} = cartItem;
+            const itemPrice =qty * price;
+            cartTotal.total += itemPrice;
+            cartTotal.amount += qty;
+            return cartTotal;
+        },
+      {total: 0, amount: 0}  
+    )
+    setTotal(total);
+    setAmount(amount)
+}, [cart]);
+
+const addItem = () =>{
+    setNumber(number + 1)
+};
 
 return(
        <AppContext.Provider value={{number, 
@@ -50,6 +70,9 @@ return(
        closeSidebar,
        amount,
        setAmount,
+       addItem,
+       qty,
+       setQty
        }}>
 {children}
        </AppContext.Provider>

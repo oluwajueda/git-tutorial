@@ -334,6 +334,7 @@ width: 350px;
                   background: transparent;
                   margin-top: 2px;
                   float: right;
+                  border-color: transparent;
                 }
  .sidebar-toggle{
   margin-left: 5px;

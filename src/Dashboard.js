@@ -13,8 +13,7 @@ import { useGlobalContext } from "./context";
 
 const Dashboard =({user,addCart, amount, setInput, input, increase, decrease}) =>{
 
-const {openSidebar} = useGlobalContext()
-
+const {openSidebar,number} = useGlobalContext()
 
  
 
@@ -40,7 +39,7 @@ const {openSidebar} = useGlobalContext()
                  <li><AiOutlineShoppingCart className="cart-photo"/></li>
                   </ul> 
                 
-                     {amount?<p>{input}</p> : null} 
+                    <p className="total-amount">{number}</p>
           
                    </div>
                     
@@ -55,7 +54,7 @@ const {openSidebar} = useGlobalContext()
                </div>
            </nav>
            <Sidebar user={user}/>
-        <Items amount={amount} addCart={addCart} setInput={setInput} input={input} decrease={decrease} increase={increase}  />
+        <Items/>
 
              
 
