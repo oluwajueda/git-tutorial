@@ -4,6 +4,9 @@ import './index.css';
 import Form from './Form';
 import Dashboard from './Dashboard';
 import Error from './Error';
+import CartPage from './CartPage';
+import Navbar from './Navbar';
+import SharedLayout from './SharedLayout'
 
 
 function App() {
@@ -29,10 +32,17 @@ function App() {
   return (
  
  <BrowserRouter>
+
+
  <Routes>
-     <Route path='/' element={<Form setUser={setUser}/>}/>
-     <Route path='dashboard' element={<Dashboard user={user} addCart={addCart} amount={amount} 
+    
+    
+     <Route path='dashboard' element={<SharedLayout/>}>
+     <Route index element={<Dashboard user={user} addCart={addCart} amount={amount} 
      input={input} setInput={setInput} increase={increase} decrease={decrease} />}/>
+     <Route path='cart-page' element={<CartPage/>} />
+     </Route>
+      <Route path='/' element={<Form setUser={setUser}/>}/>
 
      <Route path='*' element={<Error/>}/>
 

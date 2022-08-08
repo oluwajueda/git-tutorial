@@ -4,7 +4,7 @@ import { useGlobalContext } from "./context";
 import Single from "./Single";
 
 
-const Items = ({amount,addCart, increase, decrease, input, setInput}) => {
+const Items = ({i}) => {
 
 
 const { items} = useGlobalContext()
@@ -23,12 +23,11 @@ const { items} = useGlobalContext()
       <div>
           <h2>Our Products</h2>
       </div>
-      <div className="products">
+      <div className="products" >
           {items.map((item)=>{
-              const {image,title,description,price} = item
+              const {id,image,title,description,price} = item
               let desc = description.slice(0,55)  
-              return<Single {...item} item={item} amount={amount} addCart={addCart} increase={increase}
-              decrease={decrease} input={input} setInput={setInput}
+              return<Single {...item} item={item} 
               />
           })}
       </div>

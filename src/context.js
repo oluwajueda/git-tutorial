@@ -15,7 +15,7 @@ const AppProvider = ({ children }) => {
     const [items,setItems]= useState([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [input, setInput] = useState(0)
-    const [amount, setAmount] = useState(false)
+    const [amount, setAmount] = useState(0)
     const [cart, setCart] = useState([])
     const [qty, setQty] = useState(1);
 
@@ -43,21 +43,42 @@ const FetchItems = async () => {
 useEffect (()=>{
     let {total, amount} = cart.reduce(
         (cartTotal, cartItem) => {
-            const {price, qty} = cartItem;
-            const itemPrice =qty * price;
+            const {price, amount} = cartItem;
+            const itemPrice =amount * price;
             cartTotal.total += itemPrice;
-            cartTotal.amount += qty;
+            cartTotal.amount += amount;
+            console.log(cartTotal)
+            console.log(itemPrice)
+            console.log(price)
+            console.log(amount)
+            console.log(itemPrice)
             return cartTotal;
         },
       {total: 0, amount: 0}  
     )
     setTotal(total);
     setAmount(amount)
+    
+    
 }, [cart]);
 
-const addItem = () =>{
+const addItem = (id,title,price,image) =>{
     setNumber(number + 1)
-};
+    
+    
+        const newObj = {id,title,price,image,number}
+        setCart([...cart, {...newObj}  ])
+        console.log(newObj)
+            }
+    
+
+const removeItem = (id) =>{
+   setCart(cart.filter((newItem)=> newItem.id !==id))
+   console.log('hello')
+   setNumber(0)
+}
+
+
 
 return(
        <AppContext.Provider value={{number, 
@@ -72,7 +93,12 @@ return(
        setAmount,
        addItem,
        qty,
-       setQty
+       setQty,
+       cart,
+       setCart,
+       removeItem,
+       total,
+      setNumber
        }}>
 {children}
        </AppContext.Provider>

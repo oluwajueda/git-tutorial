@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {FaFacebook, FaGooglePlusG, FaLinkedin} from 'react-icons/fa';
-
+import pic from './photo/ecommerce-image.png'
+import shopping from './photo/online-shop.jpg'
 
 
 const Form = ({setUser}) => {
@@ -20,17 +21,19 @@ const Form = ({setUser}) => {
    }
 
 
-  return <>
+  return <div className="background">
+     
+    
   
   <div className='form-center'>
+   
+  
 
     <div className='form-area'>
+  <img src={shopping} alt='shopping'/>
       <form className='form' onSubmit={handleSubmit}>
         <h1>Login to Your Account</h1>
-        <p>Login using social networks</p>
-        <button className="social-icon"><FaFacebook/></button>
-        <button className="social-icon"><FaGooglePlusG/></button>
-        <button className="social-icon"><FaLinkedin/></button>
+        
         <div className='form-row'>
           <label htmlFor='name' className='form-label'>
             name
@@ -60,7 +63,7 @@ const Form = ({setUser}) => {
         </button>
       </form>
     </div>
-      <div className='register-area'>
+      {/* <div className='register-area'>
        <h1>New Here?</h1>
        <p reg-p>Sign up and discover a great amount of new opportunities!</p>
         <button type='submit' className='signup-btn'>
@@ -70,11 +73,11 @@ const Form = ({setUser}) => {
 
 
 
-      </div>
+      </div> */}
 
       </div>
+  </div>
   
-  </>
 }
 
 export default Form
