@@ -36,16 +36,16 @@ const Single = ({id, image, title, desc, price,}) => {
 
 
   return (
-    <main className='main-product' >
+    <main className='main-product'  key={id}>
      <div className="single-products" key={id}>
       <img className="image" src={image} alt=''/>
          <h3>{title}</h3>
          <p>{desc}...</p>
         <h3>{price}</h3>
          <div className='number'>
-            <button className='num-btn' onClick={decrease}>-</button>
+            <button className='num-btn' onClick={()=>decrease(id)}>-</button>
             <p className='number-p'>{number}</p>
-            <button className='num-btn' onClick={increase}>+</button>
+            <button className='num-btn' onClick={()=>increase(id)}>+</button>
         </div>
 </div>
  

@@ -27,7 +27,7 @@ const { items} = useGlobalContext()
           {items.map((item)=>{
               const {id,image,title,description,price} = item
               let desc = description.slice(0,55)  
-              return<Single {...item} item={item} 
+              return<Single {...item} item={item} key={id}
               />
           })}
       </div>
