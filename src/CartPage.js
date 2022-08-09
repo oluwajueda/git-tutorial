@@ -2,7 +2,7 @@ import React from 'react'
 import { useGlobalContext } from './context'
 
 const CartPage = () => {
-    const {cart, setCart, removeItem, amount,total} = useGlobalContext();
+    const {cart, removeItem, amount,total} = useGlobalContext();
   return <section className="product-display">
 
       <div>

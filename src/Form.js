@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {FaFacebook, FaGooglePlusG, FaLinkedin} from 'react-icons/fa';
 import pic from './photo/ecommerce-image.png'
-import shopping from './photo/online-shop.jpg'
+import shopping from './photo/shop-now.jpg'
 
 
 const Form = ({setUser}) => {
@@ -30,9 +30,8 @@ const Form = ({setUser}) => {
   
 
     <div className='form-area'>
-  <img src={shopping} alt='shopping'/>
       <form className='form' onSubmit={handleSubmit}>
-        <h1>Login to Your Account</h1>
+        <h1>Hello, Thank You For Coming Back!</h1>
         
         <div className='form-row'>
           <label htmlFor='name' className='form-label'>

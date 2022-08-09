@@ -9,14 +9,14 @@ import { useGlobalContext } from "./context";
 
 
 
-const Dashboard =({loading, products}) =>{
+const Dashboard =({loading, products1}) =>{
 
  
 if(loading){
     return <Loading/>
 } 
     
-  return   ( <Items products={products}/>
+  return   ( <Items products1={products1}/>
 
 
   )

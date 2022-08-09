@@ -13,7 +13,9 @@ const url = 'https://fakestoreapi.com/products';
 
 
 function App() {
- const [products, setProducts] = useState([])
+ const [products1, setProducts1] = useState([])
+ const [products2, setProducts2] = useState([])
+
  const [loading, setLoading] = useState(true)
 
    const fetchProducts = async () => {
@@ -23,8 +25,9 @@ function App() {
             const response = await fetch(url);
             const items = await response.json();
             setLoading(false);
-            setProducts(items)
-            console.log(products)
+            setProducts1(items)
+            setProducts2(items)
+           
         } catch (error) {
             setLoading(false)
             console.log(error)
@@ -46,11 +49,11 @@ function App() {
  const filterItems = (category) =>{
 
   if(category === 'all'){
-    setProducts(products);
-    return
+    setProducts1(products2);
+    return;
   }
-  const newItems = products.filter((item)=> item.category === category)
-       setProducts(newItems)
+  const newItems = products2.filter((prod)=> prod.category === category)
+       setProducts1(newItems)
  }
    
 
@@ -80,7 +83,7 @@ function App() {
     
     
      <Route path='dashboard' element={<SharedLayout  filterItems={filterItems} />}>
-     <Route index element={<Dashboard user={user} loading={loading} products={products}/>}/>
+     <Route index element={<Dashboard user={user} loading={loading} products1={products1}/>}/>
      <Route path='cart-page' element={<CartPage/>} />
      </Route>
       <Route path='/' element={<Form setUser={setUser}/>}/>
