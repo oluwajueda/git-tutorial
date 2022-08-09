@@ -19,6 +19,10 @@ font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 } */
+
+.category{
+  cursor: pointer;
+}
 .background{
   background:linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)),
     url(photo/ecommerce-image.png);

@@ -22,17 +22,7 @@ const Single = ({id, image, title, desc, price,}) => {
   // }
    
 
-    const increase = () =>{
-            setNumber(number+1)
-        }
-        const decrease =()=> {
-            
-            if(number<=0){
-               return number
-            }else{
-                return  setNumber(number - 1)
-            }
-        }
+   
 
 
   return (
@@ -42,11 +32,11 @@ const Single = ({id, image, title, desc, price,}) => {
          <h3>{title}</h3>
          <p>{desc}...</p>
         <h3>{price}</h3>
-         <div className='number'>
+         {/* <div className='number'>
             <button className='num-btn' onClick={()=>decrease(id)}>-</button>
             <p className='number-p'>{number}</p>
             <button className='num-btn' onClick={()=>increase(id)}>+</button>
-        </div>
+        </div> */}
 </div>
  
 

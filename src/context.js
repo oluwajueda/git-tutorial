@@ -1,44 +1,61 @@
 import React, {useState, useContext, useReducer, useEffect} from 'react'
-import items from './Items'
+
 
 const AppContext = React.createContext()
 
-const url = 'https://fakestoreapi.com/products';
 
+
+ 
 
 
 
 const AppProvider = ({ children }) => {
 
+  
+  
+
     const [number, setNumber] = useState(0)
     const [total, setTotal] = useState(0)
-    const [items,setItems]= useState([]);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [input, setInput] = useState(0)
     const [amount, setAmount] = useState(0)
     const [cart, setCart] = useState([])
     const [qty, setQty] = useState(1);
+    //  const [menuItems, setMenuItems] = useState(items)
+    
 
+
+    
+
+
+
+
+
+   
+    
+    
+    
+    
+    
     const openSidebar = () => {
         setIsSidebarOpen(true)
     }
     const closeSidebar = () => {
         setIsSidebarOpen(false)
     }
-    
-    
-const FetchItems = async () => {
+   
 
-        const response = await fetch(url);
-        const items = await response.json();
-        setItems(items)
-        console.log(items)
-      
-    }
 
-    useEffect(()=>{
-    FetchItems();
-},[]);
+
+
+    // const filterItems = (category) =>{
+    //     if(category === 'all'){
+    //         setMenuItems(items);
+    //         return;
+    //     }
+    //     const newItems = items.filter((item)=>item.category === category)
+    //     setMenuItems(newItems)
+    // }
 
 useEffect (()=>{
     let {total, amount} = cart.reduce(
@@ -80,10 +97,11 @@ const removeItem = (id) =>{
 
 
 
+
 return(
        <AppContext.Provider value={{number, 
     
-       items,
+    
        isSidebarOpen,
     
        setIsSidebarOpen,
@@ -98,7 +116,13 @@ return(
        setCart,
        removeItem,
        total,
-      setNumber
+      setNumber,
+      
+
+    
+      
+
+    
        }}>
 {children}
        </AppContext.Provider>

@@ -4,12 +4,13 @@ import {Link, Outlet} from 'react-router-dom'
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useGlobalContext } from "./context";
 
 
 
 
+const Dashboard =({user, filterItems}) =>{
 
-const Dashboard =({user}) =>{
 
 
  
@@ -19,7 +20,7 @@ const Dashboard =({user}) =>{
        <>
 
              <Navbar/>
-              <Sidebar user={user}/>
+              <Sidebar user={user} filterItems={filterItems}/>
                    
            
        
