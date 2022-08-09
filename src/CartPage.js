@@ -35,8 +35,8 @@ const CartPage = () => {
          
       </div>
    <div className='btn-cart'>
- <button className='cart-total'>total-quantity: {amount}</button>
- <button className='cart-total'>total-price: ${total}</button>
+ {/* <button className='cart-total'>total-quantity: {amount}</button>
+ <button className='cart-total'>total-price: ${total}</button> */}
 
     
     </div>  
