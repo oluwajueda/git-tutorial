@@ -24,7 +24,7 @@ font-family: 'Roboto', sans-serif;
   cursor: pointer;
 }
 .background{
-  background:linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)),
+  background:linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
     url(photo/ecommerce-image.png);
     background-attachment: fixed;
     background-position: 50%;
