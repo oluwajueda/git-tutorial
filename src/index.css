@@ -23,7 +23,7 @@ font-family: 'Roboto', sans-serif;
 .category{
   cursor: pointer;
 }
-.background{
+/* .background{
   background:linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)),
     url(photo/ecommerce-image.png);
     background-attachment: fixed;
@@ -36,7 +36,7 @@ font-family: 'Roboto', sans-serif;
     height: 100vh;
     overflow-y: scroll;
     padding: 3rem;
-}
+} */
 .register-area p{
   color: #fff;
 }
@@ -76,6 +76,7 @@ box-shadow: 0 1px #cdcdcd;
 
 .form-area h1{
   margin-bottom: 60px;
+  color: #fff;
 }
 
 .register-area{
